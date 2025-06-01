@@ -6,7 +6,7 @@ import Student from "../models/Student.model.js";
 import Class from "../models/Class.model.js";
 import { Op } from "sequelize";
 
-// 1. Record admission or monthly fee
+//Record admission or monthly fee
 export const recordPayment = asyncHandler(async (req, res) => {
   const { studentId, amount, purpose, payment_date, class_id } = req.body;
 
@@ -32,7 +32,7 @@ export const recordPayment = asyncHandler(async (req, res) => {
     .json(new ApiResponse(201, payment, "Payment recorded successfully"));
 });
 
-// 2. Get all payments for a student
+//Get all payments for a student
 export const getPaymentsByStudent = asyncHandler(async (req, res) => {
   const { studentId } = req.params;
 
@@ -49,7 +49,7 @@ export const getPaymentsByStudent = asyncHandler(async (req, res) => {
   res.status(200).json(new ApiResponse(200, payments));
 });
 
-// 3. Paginated & filtered list of all payments
+//Paginated & filtered list of all payments
 export const getAllPayments = asyncHandler(async (req, res) => {
   const {
     page = 1,
@@ -100,7 +100,7 @@ export const getAllPayments = asyncHandler(async (req, res) => {
   );
 });
 
-// 4. Delete a payment (admin only)
+//Delete a payment (admin only)
 export const deletePayment = asyncHandler(async (req, res) => {
   const { id } = req.params;
 

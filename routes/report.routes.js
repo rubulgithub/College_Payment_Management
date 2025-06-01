@@ -16,6 +16,6 @@ router.get("/fees", getFeeReport);
 router.get("/remaining", getRemainingFeeReport);
 router.get("/pending-payments", getPendingPaymentsReport);
 router.get("/pending-students", getStudentsWithPendingDues);
-router.get("/fee-summary", getFeeSummary);
+router.get("/:student_id", getFeeSummary);
 
 export default router;

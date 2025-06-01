@@ -260,7 +260,7 @@ export const getPendingPaymentsReport = asyncHandler(async (req, res) => {
     raw: true,
   });
 
-  // 2. Get all students in these classes
+  //Get all students in these classes
   const students = await Student.findAll({
     where: studentWhere,
     attributes: ["id", "student_name", "ClassId", "admission_fee_paid_amount"],
